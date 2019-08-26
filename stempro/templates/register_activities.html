@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <h4>Substrate</h4>
+    </div>
+
+    <form method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="row">
+        <div class='col-sm-2 myspace'>{{ field.label_tag }}</div>
+        <div class="col-sm-6 myspace">{{ field }}</div>
+        <div class="col-sm-4 myspace"></div>
+      </div>
+      {% endfor %}
+
+      <div class="row myspace">
+        <div class='col-sm-6'></div>
+        <div class="col-sm-6">
+          <input type = "submit" class="btn btn-info" value="Confirm Register" />
+        </div>
+       </div>
+    </form>
+  </div>
+{% endblock %}

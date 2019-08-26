@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="slider container">
+  <div class="recommend">
+    <p>We can ...</p>
+    <a class="nav-item nav-link" href="{% url 'recommend' %}">Link</a>
+  </div>
+</div>
+<br />
+<div class="container">
+  <h3>About Us</h3>
+  <p>
+In an ever-changing, increasingly complex world, it's more important than ever that our nation's youth are prepared to bring knowledge and skills to solve problems, make sense of information, and know how to gather and evaluate evidence to make decisions. These are the kinds of skills that students develop in science, technology, engineering and math—disciplines collectively known as STEM. If we want a nation where our future leaders, neighbors, and workers have the ability to understand and solve some of the complex challenges of today and tomorrow, and to meet the demands of the dynamic and evolving workforce, building students' skills, content knowledge, and fluency in STEM fields is essential. We must also make sure that, no matter where children live, they have access to quality learning environments. A child's zip code should not determine their STEM fluency.
+  </p>
+
+  <br />
+
+  <!--form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "submit" class="btn btn-info" value="Subscribe Now" />
+  </form-->
+
+  <h4>Subscribe to Our Newsletter!</h4>
+  <form method="POST">
+    {% csrf_token %}
+    <div class='row'>
+    {% for field in form %}
+      <div class="col-sm-6 col-md-3">
+      {{ field }}
+      </div>
+    {% endfor %}
+    <div "col-sm-6 col-md-3">
+      <input type = "submit" class="btn btn-info" value="Subscribe Now" />
+    </div>
+    </div>
+  </form>
+
+  <!--div class="row">
+    <form method
+    <div class="col-sm-6 col-md-3">
+      <input type="text" class="form-control" placeholder="Enter your email here*" />
+    </div>
+    <div "col-sm-6 col-md-3">
+      <input type"submit" class="btn btn-info" value="Subscribe Now" />
+    </div>
+  <div-->
+</div>
+<br />
+{% endblock %}
