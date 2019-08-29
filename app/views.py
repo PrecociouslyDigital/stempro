@@ -98,13 +98,14 @@ class InvolvedActiveView(ListView):
     template_name = 'activities.html'
 
 class CourseView(ListView):
-    queryset = InvolvedActive.objects.all()
+    queryset = Course.objects.all()
     template_name = 'activities.html'
 
 class TutorActiveView(ListView):
-    queryset = InvolvedActive.objects.all()
+    queryset = TutorActive.objects.all()
     template_name = 'activities.html'
 
 class ProgramView(ListView):
-    queryset = InvolvedActive.objects.all()
+    queryset = Program.objects.all()
     template_name = 'activities.html'
+
