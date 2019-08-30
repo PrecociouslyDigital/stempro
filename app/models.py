@@ -28,7 +28,7 @@ class Course(models.Model):
     instructor = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
-        return self.neme
+        return self.name
 
 class SubscribeEmail(models.Model):
     subscribe_email = models.CharField(unique=True, max_length=200)
@@ -45,7 +45,7 @@ class TutorActive(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=200, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
-    member_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
     instructor = models.CharField(max_length=50)
@@ -57,7 +57,7 @@ class InvolvedActive(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=200, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
-    member_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
     instructor = models.CharField(max_length=50)
@@ -69,7 +69,7 @@ class Program(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=200, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
-    member_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
     instructor = models.CharField(max_length=50)
