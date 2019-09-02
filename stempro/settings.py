@@ -23,7 +23,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '9c-(i(=1+b-ldx8=j19wt7fre5=xup-ajgm@q!&f2p9tpp@(zb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'app.CustomUser'
@@ -128,9 +128,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = ['https://stempro.scm.azurewebsites.net/wwwroot/static/']
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = ['https://spstempro.scm.azurewebsites.net/wwwroot/static/']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'thanks'
 LOGIN_REDIRECT_URL = 'home'
