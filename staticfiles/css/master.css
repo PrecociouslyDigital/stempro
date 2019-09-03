@@ -1,0 +1,22 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: white;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.mybrand {
+  width: 30%;
+}
+
+.mynav {
+  width: 100%;
+}
+
+.myerror {
+  background-color: gray;
+  color:red;
+}
