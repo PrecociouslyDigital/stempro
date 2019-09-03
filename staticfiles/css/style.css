@@ -1,0 +1,43 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.signup_class {
+  line-height: 0.9em;
+}
+
+.slider {
+  width: 600px;
+  height: 300px;
+  border-style: solid;
+  border-color: gray;
+  background: url("/static/image/seattle.jpg");
+}
+
+.recommend {
+  position: relative;
+  top: 200px;
+  left: 20px;
+  color: white;
+}
+
+.myspace {
+   margin-top: 10px;
+}
+
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.menu-item a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}

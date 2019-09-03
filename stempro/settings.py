@@ -23,9 +23,10 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '9c-(i(=1+b-ldx8=j19wt7fre5=xup-ajgm@q!&f2p9tpp@(zb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else ['*']
 AUTH_USER_MODEL = 'app.CustomUser'
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # 'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,8 +80,12 @@ WSGI_APPLICATION = 'stempro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'stemprodb',
+        'USER':'postgres',
+        'PASSWORD':'stempro',
+        'HOST': 'localhost',
+        'PORT': '5455',
     }
 }
 
@@ -128,12 +135,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/site/wwwroot/static'
-#STATICFILES_DIRS = ['https://spstempro.scm.azurewebsites.net/wwwroot/static']
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'thanks'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
