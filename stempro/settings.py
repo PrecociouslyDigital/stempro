@@ -26,7 +26,8 @@ SECRET_KEY = '#v5%j8c&2&ckf9(a_2a74)-5ghsbato3imzmcs5_9&=+-3vayk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else ['*']
+#ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else ['*']
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'app.CustomUser'
 
 
