@@ -41,3 +41,13 @@ body {
   text-decoration: none;
   display: block;
 }
+
+.myshadow {
+  margin: 20px;
+  text-shadow: 2px 2px 5px blue;
+}
+
+p {
+  font-size: 10px;
+  font-style: oblique;
+}

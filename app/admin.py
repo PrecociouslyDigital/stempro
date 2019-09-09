@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from app.forms import CustomUserCreationForm, CustomUserChangeForm
-from app.models import CustomUser, SubscribeEmail, Course, TutorActive, InvolvedActive, Program, RegisterActive
+from app.models import CustomUser, SubscribeEmail, Course, TutorActive, InvolvedActive, Program, RegisterActive, SubscribePresentation
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
@@ -18,6 +18,10 @@ class RegisterActiveAdmin(admin.ModelAdmin):
     list_filter = ('active_name', 'type', 'register_date', 'is_paid')
     #change_list_template = 'admin/register_active.html'
 
+class SubscribePresentationAdmin(admin.ModelAdmin):
+    list_display = ('name', 'number', 'email', 'cellphone', 'grade', 'wechat', 'schoolName')
+
+
 admin.site.site_header = "StemPro Dashboard"
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(SubscribeEmail)
@@ -26,6 +30,7 @@ admin.site.register(TutorActive)
 admin.site.register(InvolvedActive)
 admin.site.register(Program)
 admin.site.register(RegisterActive, RegisterActiveAdmin)
+admin.site.register(SubscribePresentation, SubscribePresentationAdmin)
 
 
 

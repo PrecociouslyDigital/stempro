@@ -7,8 +7,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
-from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm
-from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive
+from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm
+from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -17,6 +17,16 @@ class SignUpView(CreateView):
 
 class Recommend(TemplateView):
     template_name = 'recommended.html'
+
+
+class SubscribeProgramView(CreateView):
+    form_class = SubscribePresentationForm
+    template_name = 'register_program.html'
+    queryset = SubscribePresentation.objects.all()
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
 
 class SubscribeView(CreateView):
     form_class = SubscribeForm

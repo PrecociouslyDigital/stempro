@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from app.models import CustomUser, SubscribeEmail, RegisterActive
+from app.models import CustomUser, SubscribeEmail, RegisterActive, SubscribePresentation
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm):
@@ -39,6 +39,27 @@ class SubscribeForm(forms.ModelForm):
         super(SubscribeForm, self).__init__(*args, **kwargs)
         self.fields['subscribe_email'].label = "Subscribe to Our News Letter!"
 
+
+class SubscribePresentationForm(forms.ModelForm):
+    class Meta:
+        model = SubscribePresentation
+        fields = ('name', 'number', 'email', 'cellphone', 'grade', 'wechat', 'schoolName', )
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your name here*'}),
+            'number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'How many come with you'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email here*'}),
+            'cellphone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your cellphone here*'}),
+            'grade': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your grade here*'}),
+            'wechat': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your webchat ID here'}),
+            'schoolName': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your school name here*'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(SubscribePresentationForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = "Full Name"      
+        self.fields['cellphone'].label = "Cell Phone"
+        self.fields['schoolName'].label = "School Name"        
 # class Contactform(forms.Form):
 #   name = forms.CharField()
 #   email = forms.EmailField(label='E-Mail')

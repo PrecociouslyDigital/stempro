@@ -9,5 +9,6 @@ urlpatterns = [
     path('course', views.CourseView.as_view(), name='course'),
     path('tutor', views.TutorActiveView.as_view(), name='tutor'),
     path('program', views.ProgramView.as_view(), name='program'),
-    path('confirm', views.RegisterView.as_view(), name='confirm'),    
+    path('confirm', views.RegisterView.as_view(), name='confirm'),
+    path('register_program/', views.SubscribeProgramView.as_view(), name='register_program'),
 ]

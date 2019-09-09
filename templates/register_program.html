@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+  <br />
+  <h2 class="myshadow">Welcome to StemPro Day!</h2>
+  <blockquote>
+  <p>
+    今天，STEM(科学、技术、工程和数学)已经成为学生学习和生活中不可或缺的一部分。作为人类社会发展的基石和推动力，STEM各学科的知识与技能像磁石一样吸引着人们不断学习和探索。作为一家以促进和发展STEM教育为核心宗旨的非营利组织，StemPro致力于通过多样化的活动、项目和课程来帮助学生拓展视野、提高学术技能和学习方法，激发创造性思维，并通过专业人士、家庭和社区的力量提高STEM的领导力。
+  </p>
+  <p>
+    在8月25日的讲座中，我们与大家分享了STEM系列竞赛以及其在小学到高中各阶段的重要性。很多朋友因时间安排不开没能参加，会后与我们联系希望能够再组织一次。因此，我们决定为大家提供一次综合性的系列讲座，将STEM竞赛、StemPro项目介绍、及主要项目的解析演示安排在同一天的三个时段，欢迎大家根据自己的需要自由参加！
+  </p>
+  <h6>
+    <small>
+    2:00-3:00pm Session 1: 小、初、高各阶段STEM竞赛系列及其重要性
+    </small>
+  </h6>
+  <h6>
+    <small>
+    2:30-3:00pm Questions & Discussions
+    </small>
+  </h6>
+  <h6>
+    <small>
+    3:00-4:00pm Session 2: StemPro 系列项目及课程 
+    </small>
+  </h6>
+  <h6>
+    <small>
+    3:30-4:00pm Questions & Discussions
+    </small>
+  </h6>
+  <h6>    
+    <small>
+    4:00-5:00pm Session 3: Pie & Cone STEM Enrichment class Demonstration
+    </small>
+  </h6>
+  <h6>
+    <small>
+    4:30-5:00pm Questions & Discussions
+    </small>
+  </h6>
+  <h6>
+    <small>
+    Time: 2:00-5:00pm, September 15, 2019, Sunday
+    </small>
+  </h6>
+  <h6>
+    <small>
+    Address: Microsoft Building 30, 3910 163rd Ave NE, Redmond, WA 98052
+    </small>
+  </h6>
+  <h6>
+    <small>
+    请加微信进群，关注更多活动！
+    </small>
+  </h6>
+  <h6>
+    <small>
+    We-chat: Stempro
+    </small>
+  </h6>
+  <h6>
+    <mark>
+    🔥席位有限，现在报名！🔥
+    </mark>
+  </h6>
+  <h6>
+    <small>
+    Seats are limited. Sign up now!
+    </small>
+  </h6>
+  </blockquote>
+  <h4><mark>Sign Up!<mark></h4>
+  <form method="POST">
+    {% csrf_token %}
+    <div class='row'>
+    {% for field in form %}
+      <div class="col-sm-12 col-md-6">
+        {{ field.label_tag }}
+        {{ field }}
+      </div>
+    {% endfor %}
+    <div class="col-sm-12 col-md-6">
+      <br />
+      <input type = "submit" class="btn btn-info" style="width: 200px; margin-top: 15px; float: right;" value="Subscribe Now" />
+    </div>
+    </div>
+  </form>
+</div>
+<br />
+{% endblock %}
+
+

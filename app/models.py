@@ -90,3 +90,19 @@ class RegisterActive(models.Model):
 
     def get_absolute_url(self):
         return reverse("subscribe_result", kwargs={})
+
+
+class SubscribePresentation(models.Model):
+    name = models.CharField(max_length=100)
+    number = models.IntegerField(blank=True, null=True)
+    email = models.CharField(unique=True, max_length=200)
+    cellphone = models.CharField(max_length=50)
+    grade = models.IntegerField()
+    wechat = models.CharField(max_length=200, blank=True, null=True)
+    schoolName = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("subscribe_result", kwargs={})
