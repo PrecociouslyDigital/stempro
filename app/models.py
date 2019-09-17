@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
 
 class Course(models.Model):
     name = models.CharField(max_length=50)
-    summary = models.TextField(max_length=200, blank=True)
+    summary = models.TextField(max_length=3000, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
@@ -43,7 +43,7 @@ class SubscribeEmail(models.Model):
 
 class TutorActive(models.Model):
     name = models.CharField(max_length=50)
-    summary = models.TextField(max_length=200, blank=True)
+    summary = models.TextField(max_length=3000, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
@@ -55,7 +55,7 @@ class TutorActive(models.Model):
 
 class InvolvedActive(models.Model):
     name = models.CharField(max_length=50)
-    summary = models.TextField(max_length=200, blank=True)
+    summary = models.TextField(max_length=3000, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
@@ -67,7 +67,7 @@ class InvolvedActive(models.Model):
 
 class Program(models.Model):
     name = models.CharField(max_length=50)
-    summary = models.TextField(max_length=200, blank=True)
+    summary = models.TextField(max_length=3000, blank=True)
     regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
