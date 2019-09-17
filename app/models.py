@@ -21,11 +21,11 @@ class CustomUser(AbstractUser):
 class Course(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=3000, blank=True)
-    regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
+    regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    instructor = models.CharField(max_length=50, blank=True)
+    instructor = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -44,11 +44,11 @@ class SubscribeEmail(models.Model):
 class TutorActive(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=3000, blank=True)
-    regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    instructor = models.CharField(max_length=50)
+    instructor = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
       return self.name
@@ -56,11 +56,11 @@ class TutorActive(models.Model):
 class InvolvedActive(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=3000, blank=True)
-    regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    instructor = models.CharField(max_length=50)
+    instructor = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
       return self.name
@@ -68,11 +68,11 @@ class InvolvedActive(models.Model):
 class Program(models.Model):
     name = models.CharField(max_length=50)
     summary = models.TextField(max_length=3000, blank=True)
-    regular_fee = models.DecimalField(max_digits=8, decimal_places=2)
+    regular_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     member_fee = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     start_date = models.DateField(blank=True)
     adv_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    instructor = models.CharField(max_length=50)
+    instructor = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
       return self.name
