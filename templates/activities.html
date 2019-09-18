@@ -3,11 +3,8 @@
 
 {% block content %}
   <div class="container">
-    <div class="jumbotron">
-      <h4>Abstract</h4>
-    </div>
-
-    <p>Content</p>
+    <p>From SIRI to self-driving cars, artificial intelligence (AI) is progressing rapidly. We can say AI will replace human work. Are you get ready for this situation? We are service for you, education is a key to success.</p>
+    <br />
     <div class="row">
     {% for instance in object_list %}
       <div class='col-md-12'>
@@ -16,9 +13,11 @@
       <div class='col-md-3'>
         {{instance.name}}
       </div>
+      {% if instance.regular_fee is not None %}
       <div class='col-md-3'>
         {{instance.regular_fee}}
       </div>
+      {% endif %}
       <div class='col-md-3'>
         {{instance.start_date}}
       </div>
