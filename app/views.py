@@ -10,6 +10,7 @@ from django.shortcuts import redirect
 from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm
 from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation
 
+
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
@@ -18,6 +19,8 @@ class SignUpView(CreateView):
 class Recommend(TemplateView):
     template_name = 'recommended.html'
 
+class MyPage(TemplateView):
+    template_name = 'mypage.html'
 
 class SubscribeProgramView(CreateView):
     form_class = SubscribePresentationForm

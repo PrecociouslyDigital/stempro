@@ -11,4 +11,5 @@ urlpatterns = [
     path('program', views.ProgramView.as_view(), name='program'),
     path('confirm', views.RegisterView.as_view(), name='confirm'),
     path('presentation/', views.SubscribeProgramView.as_view(), name='presentation'),
+    path('mypage', views.MyPage.as_view(), name='mypage'),
 ]
