@@ -2,6 +2,10 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+button:focus {
+  outline:0;
+}
+
 .signup_class {
   line-height: 0.9em;
 }
