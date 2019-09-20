@@ -2,6 +2,10 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+button:focus {
+  outline:0;
+}
+
 .signup_class {
   line-height: 0.9em;
 }
@@ -11,7 +15,7 @@ body {
   height: 300px;
   border-style: solid;
   border-color: gray;
-  background: url("/static/image/seattle.jpg");
+  background: url("/staticfiles/image/seattle.jpg");
 }
 
 .recommend {
@@ -40,4 +44,14 @@ body {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+}
+
+.myshadow {
+  margin: 20px;
+  text-shadow: 2px 2px 5px blue;
+}
+
+p {
+  font-size: 10px;
+  font-style: oblique;
 }
