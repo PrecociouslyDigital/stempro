@@ -12,4 +12,6 @@ urlpatterns = [
     path('confirm', views.RegisterView.as_view(), name='confirm'),
     path('presentation/', views.SubscribeProgramView.as_view(), name='presentation'),
     path('mypage', views.MyPage.as_view(), name='mypage'),
+    path('mission', views.MissionView.as_view(), name='mission'),
+    path('contact', views.ContactView.as_view(), name='contact'),         
 ]

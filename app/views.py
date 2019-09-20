@@ -122,3 +122,8 @@ class ProgramView(ListView):
     queryset = Program.objects.all()
     template_name = 'activities.html'
 
+class MissionView(TemplateView):
+    template_name='mission.html'
+
+class ContactView(TemplateView):
+    template_name='contact.html'
