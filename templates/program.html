@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Program{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center">
+     <h1>PROGRAM</h1>
+     <p style="font-style: italic;">Build STEM-Leadership in the real world</p>
+  </div>
+  <div style="width:100%%">
+    <div class="row" style="margin-top:10px;">
+        <div class="col-sm-6">
+        <img src="{% static 'image/leadship.png' %}" alt="Smiley face" height="400px" width="100%%">
+        </div>
+        <div class="col-sm-6" style="margin-top:30px">
+          <h4>LEADERSHIP IN ACTION</h4>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+        <div class="col-sm-6">
+        <img src="{% static 'image/startup.png' %}" alt="Smiley face" height="400px" width="100%%">
+        </div>
+        <div class="col-sm-6" style="margin-top:30px">
+          <h4>TEEN STARTUP INCUBATION</h4>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+    <div class="col-sm-6">
+      <img src="{% static 'image/internship.png' %}" alt="Smiley face" height="400px" width="100%%">
+    </div>
+    <div class="col-sm-6" style="margin-top:30px">
+      <h4>INTERNSHIP PREPARATION</h4>
+    </div>
+    </div>
+  <div>
+</div>
+{% endblock %}

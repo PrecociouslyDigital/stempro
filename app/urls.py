@@ -8,10 +8,10 @@ urlpatterns = [
     path('involved', views.InvolvedActiveView.as_view(), name='involved'),
     path('course', views.CourseView.as_view(), name='course'),
     path('tutor', views.TutorActiveView.as_view(), name='tutor'),
-    path('program', views.ProgramView.as_view(), name='program'),
     path('confirm', views.RegisterView.as_view(), name='confirm'),
     path('presentation/', views.SubscribeProgramView.as_view(), name='presentation'),
     path('mypage', views.MyPage.as_view(), name='mypage'),
     path('mission', views.MissionView.as_view(), name='mission'),
-    path('contact', views.ContactView.as_view(), name='contact'),         
+    path('contact', views.ContactView.as_view(), name='contact'),
+    path('program', views.ProgramView.as_view(), name='program'),               
 ]

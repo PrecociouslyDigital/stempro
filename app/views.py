@@ -127,3 +127,6 @@ class MissionView(TemplateView):
 
 class ContactView(TemplateView):
     template_name='contact.html'
+
+class ProgramView(TemplateView):
+    template_name='program.html'
