@@ -80,6 +80,8 @@
                       {% endif %}
                       </div>
                     </li>
+                    <li><a class="nav-item nav-link {{active}}" href="{% url 'events' %}">Events</a></li>
+                    <li><a class="nav-item nav-link {{active}}" href="{% url 'news' %}">News</a></li>
                     {% if user.is_authenticated %}
                     <li><a class="nav-item nav-link {{active}}" href="{% url 'mypage' %}">Mypage</a></li>
                     {% endif %}

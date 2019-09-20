@@ -118,9 +118,9 @@ class TutorActiveView(ListView):
     queryset = TutorActive.objects.all()
     template_name = 'activities.html'
 
-class ProgramView(ListView):
-    queryset = Program.objects.all()
-    template_name = 'activities.html'
+#class ProgramView(ListView):
+#    queryset = Program.objects.all()
+#    template_name = 'activities.html'
 
 class MissionView(TemplateView):
     template_name='mission.html'
@@ -130,3 +130,10 @@ class ContactView(TemplateView):
 
 class ProgramView(TemplateView):
     template_name='program.html'
+
+class EventsView(TemplateView):
+    template_name='events.html'
+
+class NewsView(TemplateView):
+    template_name='news.html'
+

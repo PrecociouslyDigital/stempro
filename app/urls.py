@@ -13,5 +13,7 @@ urlpatterns = [
     path('mypage', views.MyPage.as_view(), name='mypage'),
     path('mission', views.MissionView.as_view(), name='mission'),
     path('contact', views.ContactView.as_view(), name='contact'),
-    path('program', views.ProgramView.as_view(), name='program'),               
+    path('program', views.ProgramView.as_view(), name='program'),
+    path('events', views.EventsView.as_view(), name='events'),
+    path('news', views.NewsView.as_view(), name='news'),                    
 ]
