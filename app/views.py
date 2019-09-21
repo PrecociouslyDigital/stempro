@@ -146,3 +146,6 @@ class DonateView(TemplateView):
 
 class PreclubView(TemplateView):
     template_name='preclub.html'
+
+class InternshipView(TemplateView):
+    template_name='internship.html'

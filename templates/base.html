@@ -54,7 +54,16 @@
                       <div>                 
                     </li>
 
-                    <li><a class="nav-item nav-link" href="{% url 'program' %}">Program</a></li>
+                    <li class="nav-item dropdown">
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                          Program
+                      </button>                      
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Highschool Intern</a>
+                        <a class="dropdown-item" href="#">Stem Leadership</a>
+                        <a class="dropdown-item" href="#">Enterpreneurship</a>                       
+                      <div>                 
+                    </li>
                     
                     <li class="nav-item dropdown">
                       <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
@@ -74,17 +83,31 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'mission' %}">Mission</a>
                         <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
-                      {% if user.is_authenticated %}
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">More</a>
-                      {% endif %}
                       </div>
                     </li>
-                    <li><a class="nav-item nav-link {{active}}" href="{% url 'events' %}">Events</a></li>
-                    <li><a class="nav-item nav-link {{active}}" href="{% url 'news' %}">News</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a class="nav-item nav-link {{active}}" href="{% url 'mypage' %}">Mypage</a></li>
-                    {% endif %}
+
+                    <li class="nav-item dropdown">
+                      <button role="button" type="button" style="border: none;" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                          Resource
+                      </button> 
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'blog' %}">Mission</a>
+                        <a class="dropdown-item" href="{% url 'courseware' %}">Contact Us</a>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'mypage' %}">My Page</a>
+                        {% endif %}
+                      </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <button role="button" type="button" style="border: none;" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                          More
+                      </button> 
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'events' %}">Events</a>
+                        <a class="dropdown-item" href="{% url 'news' %}">News</a>
+                      </div>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                   {% if user.is_authenticated %}
