@@ -137,3 +137,8 @@ class EventsView(TemplateView):
 class NewsView(TemplateView):
     template_name='news.html'
 
+class VolunteerView(TemplateView):
+    template_name='volunteer.html'
+
+class DonateView(TemplateView):
+    template_name='donate.html'
