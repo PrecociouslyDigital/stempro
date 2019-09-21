@@ -17,5 +17,6 @@ urlpatterns = [
     path('events', views.EventsView.as_view(), name='events'),
     path('news', views.NewsView.as_view(), name='news'),
     path('volunteer', views.VolunteerView.as_view(), name='volunteer'),
-    path('donate', views.DonateView.as_view(), name='donate'),                
+    path('donate', views.DonateView.as_view(), name='donate'),
+    path('club', views.PreclubView.as_view(), name='club'),             
 ]
