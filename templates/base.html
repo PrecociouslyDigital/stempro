@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Stem</title>
+        <title>Stempro</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -35,9 +35,9 @@
                           Tutoring
                       </button>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Test Prep</a>
-                        <a class="dropdown-item" href="#">Group Tutoring</a>
-                        <a class="dropdown-item" href="#">One-on-one Tutoring</a>
+                        <a class="dropdown-item" href="{% url 'testpre' %}">Test Prep</a>
+                        <a class="dropdown-item" href="{% url 'group' %}">Group Tutoring</a>
+                        <a class="dropdown-item" href="{% url 'one' %}">One-on-one Tutoring</a>
                       <div>                      
                     </li>
 
@@ -46,10 +46,10 @@
                           Classes On
                       </button>                      
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">STEMPro Enrichment</a>
-                        <a class="dropdown-item" href="#">Math Competition I</a>
-                        <a class="dropdown-item" href="#">Math Competition II</a>
-                        <a class="dropdown-item" href="#">Math Competition III</a>                     
+                        <a class="dropdown-item" href="{% url 'enrichment' %}">STEMPro Enrichment</a>
+                        <a class="dropdown-item" href="{% url 'math1' %}">Math Competition I</a>
+                        <a class="dropdown-item" href="{% url 'math2' %}">Math Competition II</a>
+                        <a class="dropdown-item" href="{% url 'math3' %}">Math Competition III</a>                     
                       <div>                 
                     </li>
 
@@ -58,9 +58,9 @@
                           Programs
                       </button>                      
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Highschool Intern</a>
-                        <a class="dropdown-item" href="#">Stem Leadership</a>
-                        <a class="dropdown-item" href="#">Enterpreneurship</a>                       
+                        <a class="dropdown-item" href="{% url 'intern' %}">Highschool Intern</a>
+                        <a class="dropdown-item" href="{% url 'leader' %}">Stem Leadership</a>
+                        <a class="dropdown-item" href="{% url 'entrepreneur' %}">Enterpreneurship</a>                       
                       <div>                 
                     </li>
                     

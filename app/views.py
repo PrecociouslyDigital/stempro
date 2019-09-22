@@ -148,4 +148,33 @@ class PreclubView(TemplateView):
     template_name='preclub.html'
 
 class InternshipView(TemplateView):
-    template_name='internship.html'
+    template_name='intern.html'
+
+class LeadershipView(TemplateView):
+    template_name='leader.html'
+
+class EntrepreneurshipView(TemplateView):
+    template_name='entrepreneur.html'
+
+
+class TestPreView(TemplateView):
+    template_name='test_preparation.html'
+
+class GroupView(TemplateView):
+    template_name='group_tutoring.html'
+
+class OneToOneView(TemplateView):
+    template_name='onetoonetutoring.html'
+
+class EnrichmentView(TemplateView):
+    template_name='stemproenrichment.html'
+
+
+class MathIView(TemplateView):
+    template_name='math_I.html'
+
+class MathIIView(TemplateView):
+    template_name='math_II.html'
+
+class MathIIIView(TemplateView):
+    template_name='math_III.html'
