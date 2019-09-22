@@ -5,13 +5,49 @@
 {% block content %}
 <div class="container">
   <img src="{% static 'image/seattle.jpg' %}" alt="Smiley face" height="400px" style="border-style: solid; border-color: gray;"  width="100%%">
-  <h3>About Us</h3>
-  <p>
-This is a comprehensive STEM club that combines the exploration and learning of different STEM subjects, such as mathematics, computer science, and engineering. This program focuses on discovering the students’ interests, cultivating their abilities, and developing their potential. It is a perfect fit for elementary school 1st through 3rd graders. 
-We create a profile for every student. All of their interests, performance and growth will be recorded, analyzed, and shared with parents. As the students progress, parents may start to see their kids bringing home finished projects and talking about various topics related to today’s technology. They may also share how they work within their STEM team and how they make friends. With every student’s unique growth, we will focus on and encourage their individual talents and strengths, with the goal of preparing them for next developmental steps. This will all be done in close collaboration with the parents.
-  </p>
-
   <br />
+  <div class="row" style="padding-top:20px;">
+    <div onclick="location.href='users/mission'" class="col-md-4 text-center">
+    <div style="margin-left:10px; margin-right:10px; padding-top:10px; background: #FFFAF0; height:500px;">
+    <div>
+      <img src="{% static 'image/home-tutoring.png' %}" alt="Smiley face" height="auto" width="100%%">
+      <div style="padding-top:30px;">
+        <h3>TUTORING</h3>
+        <p>Group tutoring</p>
+        <p>One-on-one tutoring</p>
+        <p>Test-Prep tutoring</p>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4 text-center">
+    <div style="margin-left:10px; margin-right:10px; padding-top:10px; background: #FFFAF0; height:500px">
+    <div>
+      <img src="{% static 'image/home-class.png' %}" alt="Smiley face" height="auto" width="100%%">
+      <div style="padding-top:30px;">    
+        <h3>CLASSES</h3>
+        <p>PIE AND CONE STEM ENRICHMENT</p>
+        <p>MATH COMPETITION CLASS I</p>
+        <p>MATH COMPETITION CLASS II</p>
+        <p>MATH COMPETITION CLASS III</p>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4 text-center">
+    <div style="margin-left:10px; margin-right:10px; padding-top:10px; background: #FFFAF0; height:500px;">
+    <div>
+      <img src="{% static 'image/home-program.png' %}" alt="Smiley face" height="auto" width="100%%">
+      <div style="padding-top:30px;">
+        <h3>PROGRAMS</h3>
+        <p>STEM-Leadership program</p>
+        <p>IMO Math Club</p>
+        <p>High school Internship program</p>
+      </div>
+    </div>
+    </div>
+    </div>
+  <div>
 
   <!--form method="POST">
     {% csrf_token %}
@@ -19,6 +55,9 @@ We create a profile for every student. All of their interests, performance and g
     <input type = "submit" class="btn btn-info" value="Subscribe Now" />
   </form-->
 
+
+  
+  <!--br />
   <h4>Subscribe to Our Newsletter!</h4>
   <form method="POST">
     {% csrf_token %}
@@ -32,7 +71,7 @@ We create a profile for every student. All of their interests, performance and g
       <input type = "submit" class="btn btn-info" value="Subscribe Now" />
     </div>
     </div>
-  </form>
+  </form -->
 
   <!--div class="row">
     <form method
