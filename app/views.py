@@ -153,17 +153,15 @@ class InternshipView(TemplateView):
     template_name='intern.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'High School Intern'
+        type = 'program'
         if request.user.is_authenticated:
-            name = 'High School Intern'
-            type = 'program'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 
 class LeadershipView(TemplateView):
@@ -172,17 +170,15 @@ class LeadershipView(TemplateView):
     template_name='leader.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Stem Leadership'
+        type = 'program'
         if request.user.is_authenticated:
-            name = 'Stem Leadership'
-            type = 'program'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 class EntrepreneurshipView(TemplateView):
     form_class = RegisterActiveForm
@@ -190,17 +186,15 @@ class EntrepreneurshipView(TemplateView):
     template_name='entrepreneur.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Enterpreneurship'
+        type = 'program'
         if request.user.is_authenticated:
-            name = 'Enterpreneurship'
-            type = 'program'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 class TestPreView(TemplateView):
     form_class = RegisterActiveForm
@@ -208,17 +202,15 @@ class TestPreView(TemplateView):
     template_name='test_preparation.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Test Preparation'
+        type = 'Tutoring'
         if request.user.is_authenticated:
-            name = 'Test Preparation'
-            type = 'Tutoring'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response    
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})   
 
 class GroupView(TemplateView):
     form_class = RegisterActiveForm
@@ -226,17 +218,15 @@ class GroupView(TemplateView):
     template_name='group_tutoring.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Group Tutoring'
+        type = 'Tutoring'
         if request.user.is_authenticated:
-            name = 'Group Tutoring'
-            type = 'Tutoring'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response       
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})     
 
 class OneToOneView(TemplateView):
     form_class = RegisterActiveForm
@@ -244,17 +234,15 @@ class OneToOneView(TemplateView):
     template_name='onetoonetutoring.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'One-on-one Tutoring'
+        type = 'Tutoring'
         if request.user.is_authenticated:
-            name = 'One-on-one Tutoring'
-            type = 'Tutoring'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response   
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form}) 
 
 class EnrichmentView(TemplateView):
     form_class = RegisterActiveForm
@@ -262,17 +250,15 @@ class EnrichmentView(TemplateView):
     template_name='stemproenrichment.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Stempro Enrichment'
+        type = 'Classeson'        
         if request.user.is_authenticated:
-            name = 'Stempro Enrichment'
-            type = 'Classeson'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response 
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 
 class MathIView(TemplateView):
@@ -281,17 +267,15 @@ class MathIView(TemplateView):
     template_name='math_I.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Math Competition I'
+        type = 'Classeson'
         if request.user.is_authenticated:
-            name = 'Math Competition I'
-            type = 'Classeson'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response 
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 class MathIIView(TemplateView):
     form_class = RegisterActiveForm
@@ -299,17 +283,15 @@ class MathIIView(TemplateView):
     template_name='math_II.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Math Competition II'
+        type = 'Classeson'
         if request.user.is_authenticated:
-            name = 'Math Competition II'
-            type = 'Classeson'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response 
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
 class MathIIIView(TemplateView):
     form_class = RegisterActiveForm
@@ -317,15 +299,13 @@ class MathIIIView(TemplateView):
     template_name='math_III.html'
 
     def get(self, request, *args, **kwargs):
+        name = 'Math Competition III'
+        type = 'Classeson'
         if request.user.is_authenticated:
-            name = 'Math Competition III'
-            type = 'Classeson'
             who_register = request.user.username
-            initial = {"active_name": name, "who_register": who_register, "type": type}
-            form = self.form_class(initial= initial)
-            return render(request, self.template_name, {'form': form})
-
         else:
-            response = redirect('login')
-            return response 
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})
 
