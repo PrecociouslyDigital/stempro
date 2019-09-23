@@ -15,12 +15,16 @@ class CustomUserChangeForm(UserChangeForm):
 class RegisterActiveForm(forms.ModelForm):
     class Meta:
         model = RegisterActive
-        fields = ('active_name', 'who_register', 'type',)
+        fields = ('first_name', 'last_name', 'phone_number', 'email', 'active_name', 'who_register', 'type',)
 
         widgets = {
             'active_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
             'who_register': forms.TextInput(attrs={'class': 'form-control'}),
-            'type': forms.TextInput(attrs={'class': 'form-control'}),
+            'type': forms.TextInput(attrs={'class': 'form-control'}),            
         }
 
     def __init__(self, *args, **kwargs):
