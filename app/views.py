@@ -147,7 +147,7 @@ class DonateView(TemplateView):
 class PreclubView(TemplateView):
     template_name='preclub.html'
 
-class InternshipView(TemplateView):
+class InternshipView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()  
     template_name='intern.html'
@@ -164,7 +164,7 @@ class InternshipView(TemplateView):
         return render(request, self.template_name, {'form': form})
 
 
-class LeadershipView(TemplateView):
+class LeadershipView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()      
     template_name='leader.html'
@@ -180,7 +180,7 @@ class LeadershipView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
-class EntrepreneurshipView(TemplateView):
+class EntrepreneurshipView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()    
     template_name='entrepreneur.html'
@@ -196,7 +196,7 @@ class EntrepreneurshipView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
-class TestPreView(TemplateView):
+class TestPreView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()     
     template_name='test_preparation.html'
@@ -212,7 +212,7 @@ class TestPreView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})   
 
-class GroupView(TemplateView):
+class GroupView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()       
     template_name='group_tutoring.html'
@@ -228,7 +228,7 @@ class GroupView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})     
 
-class OneToOneView(TemplateView):
+class OneToOneView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()     
     template_name='onetoonetutoring.html'
@@ -244,7 +244,7 @@ class OneToOneView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form}) 
 
-class EnrichmentView(TemplateView):
+class EnrichmentView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()    
     template_name='stemproenrichment.html'
@@ -261,7 +261,7 @@ class EnrichmentView(TemplateView):
         return render(request, self.template_name, {'form': form})
 
 
-class MathIView(TemplateView):
+class MathIView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()    
     template_name='math_I.html'
@@ -277,7 +277,7 @@ class MathIView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
-class MathIIView(TemplateView):
+class MathIIView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()    
     template_name='math_II.html'
@@ -293,7 +293,7 @@ class MathIIView(TemplateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
-class MathIIIView(TemplateView):
+class MathIIIView(CreateView):
     form_class = RegisterActiveForm
     queryset = RegisterActive.objects.all()    
     template_name='math_III.html'
