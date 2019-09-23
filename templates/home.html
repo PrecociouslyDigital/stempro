@@ -7,15 +7,15 @@
   <img src="{% static 'image/seattle.jpg' %}" alt="Smiley face" height="400px" style="border-style: solid; border-color: gray;"  width="100%%">
   <br />
   <div class="row" style="padding-top:20px;">
-    <div onclick="location.href='users/mission'" class="col-md-4 text-center">
+    <div class="col-md-4 text-center">
     <div style="margin-left:10px; margin-right:10px; padding-top:10px; background: #FFFAF0; height:500px;">
     <div>
       <img src="{% static 'image/home-tutoring.png' %}" alt="Smiley face" height="auto" width="100%%">
       <div style="padding-top:30px;">
         <h3>TUTORING</h3>
-        <p>Group tutoring</p>
-        <p>One-on-one tutoring</p>
-        <p>Test-Prep tutoring</p>
+        <p onclick="location.href='users/group'" style="cursor: pointer;" >Group tutoring</p>
+        <p onclick="location.href='users/one'" style="cursor:pointer;">One-on-one tutoring</p>
+        <p onclick="location.href='users/testpre'" style="cursor:pointer;">Test-Prep tutoring</p>
       </div>
     </div>
     </div>
@@ -26,10 +26,10 @@
       <img src="{% static 'image/home-class.png' %}" alt="Smiley face" height="auto" width="100%%">
       <div style="padding-top:30px;">    
         <h3>CLASSES</h3>
-        <p>PIE AND CONE STEM ENRICHMENT</p>
-        <p>MATH COMPETITION CLASS I</p>
-        <p>MATH COMPETITION CLASS II</p>
-        <p>MATH COMPETITION CLASS III</p>
+        <p onclick="location.href='users/enrichment'" style="cursor:help">PIE AND CONE STEM ENRICHMENT</p>
+        <p onclick="location.href='users/math_1'" style="cursor:pointer;">MATH COMPETITION CLASS I</p>
+        <p onclick="location.href='users/math_2'" style="cursor:pointer;">MATH COMPETITION CLASS II</p>
+        <p onclick="location.href='users/math_3'" style="cursor:pointer;">MATH COMPETITION CLASS III</p>
       </div>
     </div>
     </div>
@@ -40,9 +40,9 @@
       <img src="{% static 'image/home-program.png' %}" alt="Smiley face" height="auto" width="100%%">
       <div style="padding-top:30px;">
         <h3>PROGRAMS</h3>
-        <p>STEM-Leadership program</p>
-        <p>IMO Math Club</p>
-        <p>High school Internship program</p>
+        <p onclick="location.href='users/leader'" style="cursor:pointer;">STEM-Leadership program</p>
+        <p onclick="location.href='users/entrepreneur'" style="cursor:pointer;">IMO Math Club</p>
+        <p onclick="location.href='users/intern'" style="cursor:pointer;">High school Internship program</p>
       </div>
     </div>
     </div>
