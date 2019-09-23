@@ -2,10 +2,6 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
-img {
-  border-radius: 8px;
-}
-
 button:focus {
   outline:0;
 }
@@ -15,10 +11,11 @@ button:focus {
 }
 
 .slider {
-  width: 100%;
+  width: 600px;
   height: 300px;
   border-style: solid;
   border-color: gray;
+  background: url("/staticfiles/image/seattle.jpg");
 }
 
 .recommend {
@@ -57,4 +54,46 @@ button:focus {
 p {
   font-size: 10px;
   font-style: oblique;
+}
+
+#anima {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#anima img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#anima img.top:hover {
+  opacity:0;
+}
+
+#test {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
 }
