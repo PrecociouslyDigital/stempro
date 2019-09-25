@@ -49,20 +49,10 @@ p {
   font-style: oblique;
 }
 
-/* Safari 4.0 - 8.0 */
-/*
-@-webkit-keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
+.main-navigation {
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
-*/
-/* Standard syntax */
-/*
-@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
-*/
+
 #slider {
   width: 1000px;
   overflow: hidden;
