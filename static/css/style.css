@@ -52,13 +52,11 @@ p {
 }
 
 #slider {
-  width: 1000px;
   overflow: hidden;
 }
 
 #box {
   position: relative;
-  width: 4000px;
   animation-name: slideranimation;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -77,34 +75,34 @@ p {
     left: 0px;
   }
   16% {
-    left: -1000px;
+    left: -1200px;
   }
   24% {
-    left: -1000px;
+    left: -1200px;
   }  
   32% {
-    left: -2000px;
+    left: -2400px;
   }
   40% {
-    left: -2000px;
+    left: -2400px;
   }
   48% {
-    left: -3000px;
+    left: -3600px;
   }
   56% {
-    left: -3000px;
+    left: -3600px;
   }
   64% {
-    left: -2000px;
+    left: -2400px;
   }
   72% {
-    left: -2000px;
+    left: -2400px;
   }  
   80% {
-    left: -1000px;
+    left: -1200px;
   }
   90% {
-    left: -1000px;
+    left: -1200px;
   }
   100% {
     left: 0px;

@@ -3,13 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container">
+<div id="main">
   <div id="slider">
     <div id="box">
-      <img src="{% static 'image/seattle.jpg' %}" height='400px' width='1000px' alt="Smiley face">
-      <img src="{% static 'image/seattle.jpg' %}" height='400px' width='1000px' alt="Smiley face">
-      <img src="{% static 'image/seattle.jpg' %}" height='400px' width='1000px' alt="Smiley face">
-      <img src="{% static 'image/seattle.jpg' %}" height='400px' width='1000px' alt="Smiley face">
+      <img class='image' src="{% static 'image/seattle.jpg' %}" height='400px' alt="Smiley face">
+      <img class='image' src="{% static 'image/seattle.jpg' %}" height='400px' alt="Smiley face">
+      <img class='image' src="{% static 'image/seattle.jpg' %}" height='400px' alt="Smiley face">
+      <img class='image' src="{% static 'image/seattle.jpg' %}" height='400px' alt="Smiley face">
     </div>  
   </div>
 
@@ -96,20 +96,58 @@
 <script type="text/javascript">
 jQuery(document).ready(function() {
     if (window.innerWidth) {
-        if (window.innerWidth > 1320) {
-            var x = (window.innerWidth - 1320) / 2;
-            console.log(window.innerWidth);
-            //console.log(left);
-            //$('#slider').css('margin-left', '150 !important');
-            var left = x + 'px';
+      var w = 1200;
+      var x = (window.innerWidth - 1200) / 2;
+      $('#main').css( { "margin-left" : x } );
+      $('#main').css( { "margin-right" : x } );
+      $('.image').width(w);
+      $('#box').width(w * 4);
+      $('#slider').width(w);
 
-            console.log(left);
-            $('#slider').css( { "margin-left" : left } );
-        }
+      //or however you get a handle to the IMG
+      //var width = img.clientWidth;
+      /*
+              if (window.innerWidth > 1320) {
+                  var x = (window.innerWidth - 1320) / 2;
+                  console.log(window.innerWidth);
+                  console.log(left);
+                  $('#slider').css( { "margin-left" : left } );
+              }
+      */       
      }  
+});
+
+$(window).resize(function() {
+  //resize just happened, pixels changed
+  var w = 1200;
+  var x = (window.innerWidth - 1200) / 2;
+  $('#main').css( { "margin-left" : x } );
+  $('#main').css( { "margin-right" : x } );
+  $('.image').width(w);
+  $('#box').width(w * 4);
+  $('#slider').width(w);
 });
 </script>
 
 
 {% endblock %}
+<!-->
+document.getElementById("tunnel").animate([
+  // keyframes
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-300px)' }
+], { 
+  // timing options
+  duration: 1000,
+  iterations: Infinity
+});
 
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#box").animate({height: "300px"});
+  });
+  $("#btn2").click(function(){
+    $("#box").animate({height: "100px"});
+  });
+});
+<-->
