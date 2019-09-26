@@ -137,9 +137,6 @@ class EventsView(TemplateView):
 class NewsView(TemplateView):
     template_name='news.html'
 
-class VolunteerView(TemplateView):
-    template_name='volunteer.html'
-
 class DonateView(TemplateView):
     template_name='donate.html'
 
@@ -309,3 +306,18 @@ class MathIIIView(CreateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
+class VolunteerView(TemplateView):
+    form_class = RegisterActiveForm
+    queryset = RegisterActive.objects.all()     
+    template_name='volunteer.html'
+
+    def get(self, request, *args, **kwargs):
+        name = 'Volunteer Events'
+        type = 'Volunteer'
+        if request.user.is_authenticated:
+            who_register = request.user.username
+        else:
+            who_register = ''                
+        initial = {"active_name": name, "who_register": who_register, "type": type}
+        form = self.form_class(initial= initial)
+        return render(request, self.template_name, {'form': form})

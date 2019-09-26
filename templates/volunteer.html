@@ -4,23 +4,39 @@
 
 {% block content %}
 <div class="container">
-  <div style="width:100%%">
-    <div class="row" style="margin-top:10px;">
-        <div class="col-sm-6" style="margin-top:0px">
-          <h1>LEADERSHIP IN ACTION</h1>
-          <p style="font-style:italic">Volunteering is one of the best ways to involve communities and learn from the real world. For students, we provide variety volunteer opportunities including tutoring in lower graders with homework, joining our events for helping, and working in your own STEM-Leadership project team.
-            For professionals, parents or enthusiasms, what you are good at will help our students make progress in their classes and programs.
-          </p>
-          <p style="font-style:italic">StemPro believes that helping each other is one of the most valuable parts of our life for human beings. Let's build a warm, effective and interesting platform together!</p>
+  <img src="{% static 'image/volunteering.png' %}" alt="Smiley face" height="500px" style="border-style: solid; border-color: gray;"  width="100%%">
+  <br />
+  <div class="row">
+    <div class="col-md-6" style="margin-top:30px">
+      <h4 style="color:blue">Volunteer</h4>
+      <p style="font-size:16px; text-align: justify;">Volunteering is one of the best ways to involve communities and learn from the real world. For students, we provide variety volunteer opportunities including tutoring in lower graders with homework, joining our events for helping, and working in your own STEM-Leadership project team.
+        For professionals, parents or enthusiasms, what you are good at will help our students make progress in their classes and programs.
+      </p>
+      <p style="font-size:16px; text-align: justify;">StemPro believes that helping each other is one of the most valuable parts of our life for human beings. Let's build a warm, effective and interesting platform together!</p>
 
-          <h4>HIGH SCHOOLERS</h4>
-          <h4>PROFESSIONALS</h4>
-          <h4>PARENTS</h4>
-        </div>
-        <div class="col-sm-6">
-        <img src="{% static 'image/volunteering.png' %}" alt="Smiley face" height="400px" width="100%%">
-        </div>        
+      <h6>HIGH SCHOOLERS</h6>
+      <h6>PROFESSIONALS</h6>
+      <h6>PARENTS</h6>
     </div>
+    <div class="col-md-1"></div> 
+    <div class="col-md-5" style="margin-top:30px">
+      <form method="POST">
+        <div class="text-center">
+        <h4>Get Start today!</h4>
+        </div>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="row">
+          <div class='col-sm-4 myspace'>{{ field.label_tag }}</div>
+          <div class="col-sm-6 myspace">{{ field }}</div>
+          <div class="col-sm-2 myspace"></div>
+        </div>
+        {% endfor %}
+        <div class="text-center", style="padding-top: 10px;">
+           <input type = "submit" class="btn btn-info" value="Register Now" />
+        </div>
+      </form>    
+    </div>    
   </div>
 </div>
 {% endblock %}
