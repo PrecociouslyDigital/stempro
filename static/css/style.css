@@ -60,7 +60,7 @@ p {
   position: relative;
   width: 4000px;
   animation-name: slideranimation;
-  animation-duration: 80s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
 }
 
