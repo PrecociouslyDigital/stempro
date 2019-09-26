@@ -30,9 +30,9 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="nav navbar-nav">
-                    <li><a class="nav-item nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li><a class="nav-item nav-link" href="{% url 'home' %}" style="color:dodgerblue; font-weight: 500;">Home</a></li>
                     <li class="nav-item dropdown"> 
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue;font-weight:500;"> 
                           Tutoring
                       </button>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-weight: 500;"> 
                           Classes On
                       </button>                      
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-weight: 500;"> 
                           Programs
                       </button>                      
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -66,7 +66,7 @@
                     </li>
                     
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-weight: 500;"> 
                           Get Involved
                       </button>                        
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -77,7 +77,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" style="border: none;" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-weight: 500;"> 
                           About
                       </button> 
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -87,7 +87,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" style="border: none;" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-weight: 500;"> 
                           Resource
                       </button> 
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -100,7 +100,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                      <button role="button" type="button" style="border: none;" class="nav-link dropdown btn" data-toggle="dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:dodgerblue; font-size:16px; font-weight: 500;"> 
                           More
                       </button> 
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -111,10 +111,10 @@
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                   {% if user.is_authenticated %}
-                    <li><a class="nav-item nav-link" href="#">Hi, {{ user.username }}!</a></li>
-                    <li><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="nav-item nav-link" style="color:dodgerblue; font-weight:500;" href="#">Hi, {{ user.username }}!</a></li>
+                    <li><a class="nav-item nav-link" style="color:dodgerblue; font-weight:500;" href="{% url 'logout' %}">Logout</a></li>
                   {% else %}
-                    <li><a class="nav-item nav-link" href={% url 'login' %}>Login</a></li>
+                    <li><a class="nav-item nav-link" style="color:dodgerblue; font-weight:500;" href={% url 'login' %}>Login</a></li>
                   {% endif %}
                 </ul>
             </div>
