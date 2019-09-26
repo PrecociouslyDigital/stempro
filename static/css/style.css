@@ -10,7 +10,6 @@ button:focus {
   line-height: 0.9em;
 }
 
-
 .recommend {
   position: relative;
   top: 200px;
@@ -45,7 +44,6 @@ button:focus {
 }
 
 p {
-  font-size: 10px;
   font-style: oblique;
 }
 
