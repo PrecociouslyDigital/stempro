@@ -31,29 +31,6 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="nav navbar-nav">
                     <li><a class="nav-item nav-link" href="{% url 'home' %}" style="color:#000000; font-weight: 500;">Home</a></li>
-                    <li class="nav-item dropdown"> 
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000;font-weight:500;"> 
-                          Tutoring
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'testpre' %}">Test Prep</a>
-                        <a class="dropdown-item" href="{% url 'group' %}">Group Tutoring</a>
-                        <a class="dropdown-item" href="{% url 'one' %}">One-on-one Tutoring</a>
-                      <div>                      
-                    </li>
-
-                    <li class="nav-item dropdown">
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000; font-weight: 500;"> 
-                          Classes On
-                      </button>                      
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'enrichment' %}">STEMPro Enrichment</a>
-                        <a class="dropdown-item" href="{% url 'math1' %}">Math Competition I</a>
-                        <a class="dropdown-item" href="{% url 'math2' %}">Math Competition II</a>
-                        <a class="dropdown-item" href="{% url 'math3' %}">Math Competition III</a>                     
-                      <div>                 
-                    </li>
-
                     <li class="nav-item dropdown">
                       <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000; font-weight: 500;"> 
                           Programs
@@ -63,6 +40,29 @@
                         <a class="dropdown-item" href="{% url 'leader' %}">Stem Leadership</a>
                         <a class="dropdown-item" href="{% url 'entrepreneur' %}">Enterpreneurship</a>                       
                       <div>                 
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000; font-weight: 500;"> 
+                          Classes
+                      </button>                      
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'enrichment' %}">STEMPro Enrichment</a>
+                        <a class="dropdown-item" href="{% url 'math1' %}">Math Competition I</a>
+                        <a class="dropdown-item" href="{% url 'math2' %}">Math Competition II</a>
+                        <a class="dropdown-item" href="{% url 'math3' %}">Math Competition III</a>                     
+                      <div>                 
+                    </li>
+
+                    <li class="nav-item dropdown"> 
+                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000;font-weight:500;"> 
+                          Tutoring
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'testpre' %}">Test Prep</a>
+                        <a class="dropdown-item" href="{% url 'group' %}">Group Tutoring</a>
+                        <a class="dropdown-item" href="{% url 'one' %}">One-on-one Tutoring</a>
+                      <div>                      
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -99,15 +99,7 @@
                       </div>
                     </li>
 
-                    <li class="nav-item dropdown">
-                      <button role="button" type="button" class="nav-link dropdown btn" data-toggle="dropdown" style="color:#000000; font-size:16px; font-weight: 500;"> 
-                          More
-                      </button> 
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'events' %}">Events</a>
-                        <a class="dropdown-item" href="{% url 'news' %}">News</a>
-                      </div>
-                    </li>
+                    <li><a class="nav-item nav-link" href="{% url 'events' %}" style="color:#000000; font-weight: 500;">Events</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                   {% if user.is_authenticated %}
@@ -119,7 +111,7 @@
                 </ul>
             </div>
         </nav>
-        <div>
+        <div style="margin-left:50px; margin-right:50px;">
             <!--img src="{% static 'image/under-construction.png' %}" title="Under Construction" alt="under construction" style="height: 100px; width: 100px" />
             <span style="font-size: 24px; font-style: italic;">Under Construction</span-->
             <br />

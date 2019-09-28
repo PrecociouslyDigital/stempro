@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
-from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm
+from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm
 from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation
 
 
@@ -307,13 +307,13 @@ class MathIIIView(CreateView):
         return render(request, self.template_name, {'form': form})
 
 class VolunteerView(TemplateView):
-    form_class = RegisterActiveForm
+    form_class = RegisterVoluteerForm
     queryset = RegisterActive.objects.all()     
     template_name='volunteer.html'
 
     def get(self, request, *args, **kwargs):
         name = 'Volunteer Events'
-        type = 'Volunteer'
+        type = 'Volunteer' 
         if request.user.is_authenticated:
             who_register = request.user.username
         else:
