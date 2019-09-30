@@ -314,13 +314,6 @@ class VolunteerView(TemplateView):
     template_name='volunteer.html'
 
     def get(self, request, *args, **kwargs):
-        name = 'Volunteer Events'
-        type = 'Volunteer' 
-        if request.user.is_authenticated:
-            who_register = request.user.username
-        else:
-            who_register = ''
-
         form = self.form_class()
         return render(request, self.template_name, { 'form': form })
 
