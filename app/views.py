@@ -308,7 +308,9 @@ class MathIIIView(CreateView):
 
 class VolunteerView(TemplateView):
     form_class = RegisterVoluteerForm
-    queryset = RegisterActive.objects.all()     
+    queryset = RegisterActive.objects.all()
+    queryset.active_name = "Volunteer"
+    queryset.who_register = ""
     template_name='volunteer.html'
 
     def get(self, request, *args, **kwargs):
@@ -317,7 +319,7 @@ class VolunteerView(TemplateView):
         if request.user.is_authenticated:
             who_register = request.user.username
         else:
-            who_register = ''                
-        initial = {"active_name": name, "who_register": who_register, "type": type}
-        form = self.form_class(initial= initial)
+            who_register = ''
+
+        form = self.form_class()
         return render(request, self.template_name, {'form': form})

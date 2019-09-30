@@ -42,8 +42,6 @@ class RegisterVoluteerForm(forms.Form):
     last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
     phone_number = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    active_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    who_register = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     type = forms.CharField(
         max_length=3,
