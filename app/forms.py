@@ -44,7 +44,7 @@ class RegisterVoluteerForm(forms.Form):
     email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     type = forms.CharField(
-        max_length=3,
+        max_length=300,
         widget=forms.Select(choices=TYPE_CHOICES, attrs={'class': 'form-control'}),
     )
   
