@@ -31,6 +31,7 @@
           <div class="col-sm-6 myspace">{{ field }}</div>
           <div class="col-sm-2 myspace"></div>
         </div>
+                <span class="text-danger small">{{ field.errors }}</span>
         {% endfor %}
         <div class="text-center", style="padding-top: 10px;">
            <input type = "submit" class="btn btn-info" value="Register Now" />
