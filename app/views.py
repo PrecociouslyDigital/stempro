@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm
 from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation
@@ -314,4 +315,11 @@ class VolunteerView(CreateView):
     def get(self, request, *args, **kwargs):
         form = self.form_class()
         return render(request, self.template_name, { 'form': form })
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+  #            # <process form cleaned data>
+            return HttpResponseRedirect('/subscribe_result/')
+        return render(request, self.template_name, {'form': form})
 
