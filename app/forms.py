@@ -43,15 +43,10 @@ class RegisterVoluteerForm(forms.Form):
     phone_number = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-    type = forms.CharField(
+    type = forms.CharField(label="Type of Volunteer"
         max_length=300,
         widget=forms.Select(choices=TYPE_CHOICES, attrs={'class': 'form-control'}),
     )
-
-    def __init__(self, *args, **kwargs):
-        super(RegisterVoluteerForm, self).__init__(*args, **kwargs)
-        self.fields['type'].label = "Type of Volunteer"
-
 
 class SubscribeForm(forms.ModelForm):
     class Meta:
