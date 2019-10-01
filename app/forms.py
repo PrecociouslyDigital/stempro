@@ -37,16 +37,16 @@ TYPE_CHOICES = [
     ('Donation', 'Donation'),
 ]
 
-class RegisterVoluteerForm(forms.Form):
-    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    phone_number = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+#class RegisterVoluteerForm(forms.Form):
+#    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+#    last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+#    phone_number = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+#    email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-    type = forms.CharField(
-        max_length=300,
-        widget=forms.Select(choices=TYPE_CHOICES, attrs={'class': 'form-control'}),
-    )
+#    type = forms.CharField(
+#        max_length=300,
+#        widget=forms.Select(choices=TYPE_CHOICES, attrs={'class': 'form-control'}),
+#    )
 
 class SubscribeForm(forms.ModelForm):
     class Meta:

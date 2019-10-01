@@ -307,12 +307,12 @@ class MathIIIView(CreateView):
         form = self.form_class(initial= initial)
         return render(request, self.template_name, {'form': form})
 
-class VolunteerView(CreateView):
-    form_class = RegisterVoluteerForm
-    queryset = RegisterActive.objects.all()
-    template_name='volunteer.html'
+#class VolunteerView(CreateView):
+#    form_class = RegisterVoluteerForm
+#    queryset = RegisterActive.objects.all()
+#    template_name='volunteer.html'
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request, self.template_name, { 'form': form })
+#    def get(self, request, *args, **kwargs):
+#        form = self.form_class()
+#        return render(request, self.template_name, { 'form': form })
 
