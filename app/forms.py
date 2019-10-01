@@ -47,8 +47,10 @@ class RegisterVoluteerForm(forms.Form):
         max_length=300,
         widget=forms.Select(choices=TYPE_CHOICES, attrs={'class': 'form-control'}),
     )
+
     def __init__(self, *args, **kwargs):
-        super(RegisterVoluteerForm, self).__init__(*args, **kwargs)  
+        super(RegisterVoluteerForm, self).__init__(*args, **kwargs)
+        self.fields['type'].label = "Type of Volunteer"
 
 
 class SubscribeForm(forms.ModelForm):
