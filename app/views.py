@@ -309,8 +309,6 @@ class MathIIIView(CreateView):
 class VolunteerView(CreateView):
     form_class = RegisterVoluteerForm
     queryset = RegisterActive.objects.all()
-    queryset.active_name = "Volunteer"
-    queryset.who_register = ""
     template_name='volunteer.html'
 
     def get(self, request, *args, **kwargs):
