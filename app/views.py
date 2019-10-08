@@ -320,5 +320,18 @@ class VolunteerView(CreateView):
         form = self.form_class(request.POST)
         if form.is_valid():
             # <process form cleaned data>
-            return HttpResponseRedirect('/users/subscribe_result/')
+            volunteer_info = form.cleaned_data
+
+            volunteer = RegisterActive(
+                first_name=volunteer_info['first_name'],
+                last_name=volunteer_info['last_name'],
+                phone_number=volunteer_info['phone_number'],
+                email=volunteer_info['email'],
+                active_name=volunteer_info['type'],
+                who_register=volunteer_info['first_name'],                
+                type='volunteer')
+            volunteer.save()
+
+            return HttpResponseRedirect('/users/mypage')
         return render(request, self.template_name, {'form': form})
+
