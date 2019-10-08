@@ -332,6 +332,6 @@ class VolunteerView(CreateView):
                 type='volunteer')
             volunteer.save()
 
-            return HttpResponseRedirect('/users/mypage')
+            return HttpResponseRedirect('/users/volunteer')
         return render(request, self.template_name, {'form': form})
 
