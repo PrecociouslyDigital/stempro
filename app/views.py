@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 
-from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm
-from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation
+from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm, SignupEventForm
+from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation, Event
 
 
 class SignUpView(CreateView):
@@ -131,9 +131,6 @@ class ContactView(TemplateView):
 
 class ProgramView(TemplateView):
     template_name='program.html'
-
-class EventsView(TemplateView):
-    template_name='events.html'
 
 class NewsView(TemplateView):
     template_name='news.html'
@@ -334,4 +331,28 @@ class VolunteerView(CreateView):
 
             return HttpResponseRedirect('/users/volunteer')
         return render(request, self.template_name, {'form': form})
+
+
+##########################################################
+#class EventsView(ListView):
+#    queryset = Event.objects.all()
+#    template_name='events.html' 
+
+#    def post(self, request, *args, **kwargs):
+#        form = self.form_class(request.POST)
+#        signup_info = form.cleaned_data
+#        name = signup_info['name']
+#        print('test:', name)
+#        return HttpResponseRedirect('/users/events')        
+
+###########################################################
+
+def eventview(request):
+    form = SignupEventForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+
+    # notice this comes after saving the form to pick up new objects
+    objects = Event.objects.all()
+    return render(request, 'events.html', {'objects': objects, 'form': form})
 

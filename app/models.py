@@ -7,6 +7,17 @@ from django.urls import reverse
 # users/models.py
 from django.contrib.auth.models import AbstractUser
 
+
+class Event(models.Model):
+    name = models.CharField(max_length=200)
+    where = models.CharField(max_length=200)
+    summary = models.CharField(max_length=2000)
+    capacity = models.IntegerField()
+    when = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+
 class CustomUser(AbstractUser):
     # add additional fields in here
     portfolio_site = models.URLField(blank=True)
@@ -95,6 +106,23 @@ class RegisterActive(models.Model):
 
     def get_absolute_url(self):
         return reverse("subscribe_result", kwargs={})
+
+
+class SignupEvent(models.Model):
+    first_name = models.CharField(max_length=50, null=True)
+    last_name = models.CharField(max_length=50, null=True)
+    phone_number = models.CharField(max_length=50, null=True)
+    email = models.CharField(max_length=100, null=True)
+    event_name = models.CharField(max_length=200)
+    number = models.IntegerField(default=1)
+    register_date = models.DateField(default=date.today)
+    is_paid = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.who_register
+
+    def get_absolute_url(self):
+        return reverse("events", kwargs={})    
 
 
 class SubscribePresentation(models.Model):

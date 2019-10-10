@@ -5,7 +5,59 @@
 {% block content %}
 <div class="container text-center">
      <h1>Events Post</h1>
+     <hr />
+     <div class="row" style="margin-left:100px; margin-right:100px;">
+        {% for instance in objects %}
+        <div class='col-md-12'>
+            <h4>{{instance.name}}</h4>
+        </div>
+        <div class="col-md-3">
+            <p>{{instance.summary}}</p>
+        </div>
+        <div class="col-md-3">
+            <p>{{instance.when}}</p>
+        </div>
+        <div class="col-md-3">
+            <p>{{instance.where}}</p>
+        </div>
+        <div class="col-md-3">
+            <input type="button" id="btnSignup" class="btn btn-primary" value="Sign up" />
+        </div>
+
+        <div class="col-md-12">
+            <hr />
+        </div>       
+        {% endfor %}
+        <div id="idSignup" style="position: relative; margin-left: 250px; padding: 10px; display: none; border-radius: 6px; z-index: 1;  background-color: #555; color: #fff;">
+            <form method="POST">
+                <h4>Thank You!</h4>
+                <h4>Sign up today!</h4>
+                <a href="mailto:admin@stempro.org">Email Us</a><span>&nbsp;or register below. We will contact you promptly!</span>
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="row">
+                <div class='col-sm-4 myspace'>{{ field.label_tag }}</div>
+                <div class="col-sm-6 myspace">{{ field }}</div>
+                <div class="col-sm-2 myspace"></div>
+                </div>
+                <span class="text-danger small">{{ field.errors }}</span>
+                {% endfor %}
+                <div class="text-center", style="padding-top: 10px;">
+                <input type = "submit" class="btn btn-info" value="Sign Up" />
+                </div>
+            </form>   
+
+        </div>         
+     </div>
      <img src="{% static 'image/events-8-25.png' %}" alt="Smiley face" height="350px" style="padding-top: 25px;border-radius: 8px;" width="70%">
      <img src="{% static 'image/events-8-4.png' %}" alt="Smiley face" height="350px" style="padding-top: 25px;border-radius: 8px;" width="70%">     
 </div>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    $("#btnSignup").click(() => {
+        document.getElementById("idSignup").style.display = "block";
+    });
+});
+</script>
 {% endblock %}

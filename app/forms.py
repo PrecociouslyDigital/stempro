@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from app.models import CustomUser, SubscribeEmail, RegisterActive, SubscribePresentation
+from app.models import CustomUser, SubscribeEmail, RegisterActive, SubscribePresentation, SignupEvent
 from datetime import date
 
 class CustomUserCreationForm(UserCreationForm):
@@ -64,6 +64,26 @@ class SubscribeForm(forms.ModelForm):
         super(SubscribeForm, self).__init__(*args, **kwargs)
         self.fields['subscribe_email'].label = "Subscribe to Our News Letter!"
 
+
+class SignupEventForm(forms.ModelForm):
+    class Meta:
+        model = SignupEvent
+        fields = ('first_name', 'last_name', 'phone_number', 'email', 'event_name', 'number')
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your first name here*'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your last name here*'}),            
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your cellphone here*'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email here*'}),
+            'event_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter event name here*'}),                        
+            'number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your attendance*'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(SignupEventForm, self).__init__(*args, **kwargs)
+        self.fields['number'].label = "Attendance"      
+        self.fields['phone_number'].label = "Cell Phone"    
+        self.fields['event_name'].label = "Event Name"  
 
 class SubscribePresentationForm(forms.ModelForm):
     class Meta:
