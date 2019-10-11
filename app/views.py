@@ -47,6 +47,16 @@ class SubscribeView(CreateView):
     #    return context
 
 
+class ContactView(CreateView):
+    form_class = SubscribeForm
+    template_name = 'contact.html'
+    queryset = SubscribeEmail.objects.all()
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+
 class RegisterView(CreateView):
     form_class = RegisterActiveForm
     #fields = ['active_name', 'who_register', 'type']
@@ -125,9 +135,6 @@ class TutorActiveView(ListView):
 
 class MissionView(TemplateView):
     template_name='mission.html'
-
-class ContactView(TemplateView):
-    template_name='contact.html'
 
 class ProgramView(TemplateView):
     template_name='program.html'

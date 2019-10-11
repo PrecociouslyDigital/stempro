@@ -5,5 +5,24 @@
 {% block content %}
 <div class="container">
 <img src="{% static 'image/location.png' %}" alt="Smiley face" height="400px" width="100%%">
-<h2>Contact Us:</h2>
+  <br />
+  <br />
+  <h4>Subscribe to Our Newsletter!</h4>
+  <form method="POST">
+    {% csrf_token %}
+    <div class='row'>
+    {% for field in form %}
+      <div class="col-sm-6 col-md-3">
+      {{ field }}
+      </div>
+    {% endfor %}
+    <div "col-sm-6 col-md-3">
+      <input type = "submit" class="btn btn-info" value="Subscribe Now" />
+    </div>
+    </div>
+  </form>
+
+
+
+
 {% endblock %}
