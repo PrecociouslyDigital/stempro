@@ -11,9 +11,10 @@ from django.contrib.auth.models import AbstractUser
 class Event(models.Model):
     name = models.CharField(max_length=200)
     where = models.CharField(max_length=200)
-    summary = models.CharField(max_length=2000)
     capacity = models.IntegerField()
-    when = models.DateTimeField()
+    start_date = models.DateField(blank=True, null=True)
+    time_from = models.TimeField(blank=True, null=True)
+    time_to = models.TimeField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -50,6 +51,7 @@ class SubscribeEmail(models.Model):
         return self.subscribe_email
 
     def get_absolute_url(self):
+        print('subscribe')
         return reverse("subscribe_result", kwargs={})
 
 class TutorActive(models.Model):

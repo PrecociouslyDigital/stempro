@@ -22,7 +22,7 @@ class SubscribePresentationAdmin(admin.ModelAdmin):
     list_display = ('name', 'number', 'email', 'cellphone', 'grade', 'wechat', 'schoolName')
 
 class EventsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'when', 'where', 'summary', 'capacity')
+    list_display = ('name', 'where', 'start_date', 'time_from', 'time_to', 'capacity')
 
 class SignupEventAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'phone_number', 'email', 'event_name', 'number', 'register_date', 'is_paid')
@@ -38,4 +38,3 @@ admin.site.register(RegisterActive, RegisterActiveAdmin)
 admin.site.register(SubscribePresentation, SubscribePresentationAdmin)
 admin.site.register(Event, EventsAdmin)
 admin.site.register(SignupEvent, SignupEventAdmin)
-
