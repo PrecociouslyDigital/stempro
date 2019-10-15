@@ -8,9 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 
-from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm, SignupEventForm
-from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation, Event
-
+from .forms import CustomUserCreationForm, SubscribeForm, RegisterActiveForm, SubscribePresentationForm, RegisterVoluteerForm, SignupEventForm, RegisterProjectForm
+from .models import SubscribeEmail, InvolvedActive, Course, TutorActive, Program, RegisterActive, SubscribePresentation, Event, SignupProject
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -339,6 +338,34 @@ class VolunteerView(CreateView):
             return HttpResponseRedirect('/users/volunteer')
         return render(request, self.template_name, {'form': form})
 
+
+class ProjectView(CreateView):
+    form_class = RegisterProjectForm
+    queryset = SignupProject.objects.all()
+    template_name='project.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, { 'form': form })
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # <process form cleaned data>
+            project_info = form.cleaned_data
+
+            project = SignupProject(
+                full_name=project_info['full_name'],
+                email=project_info['email'],
+                phone_number=project_info['phone_number'],
+                school_name=project_info['school_name'],
+                grade=project_info['grade'],
+                first_choice=project_info['first_choice'],                
+                second_choice=project_info['second_choice'])
+            project.save()
+
+            return HttpResponseRedirect('/users/project')
+        return render(request, self.template_name, {'form': form})
 
 ##########################################################
 #class EventsView(ListView):

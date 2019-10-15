@@ -28,5 +28,6 @@ urlpatterns = [
     path('enrichment', views.EnrichmentView.as_view(), name='enrichment'),
     path('math_1', views.MathIView.as_view(), name='math1'),
     path('math_2', views.MathIIView.as_view(), name='math2'),
-    path('math_3', views.MathIIIView.as_view(), name='math3'),                                   
+    path('math_3', views.MathIIIView.as_view(), name='math3'),
+    path('project', views.ProjectView.as_view(), name='project'),                                       
 ]

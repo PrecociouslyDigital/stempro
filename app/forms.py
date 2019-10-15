@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from app.models import CustomUser, SubscribeEmail, RegisterActive, SubscribePresentation, SignupEvent
+from app.models import CustomUser, SubscribeEmail, RegisterActive, SubscribePresentation, SignupEvent, SignupProject
 from datetime import date
 
 class CustomUserCreationForm(UserCreationForm):
@@ -31,6 +31,7 @@ class RegisterActiveForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(RegisterActiveForm, self).__init__(*args, **kwargs)
 
+
 TYPE_CHOICES = [
     ('Volunteer STEM Events', 'Volunteer STEM Events'),
     ('Volunteer Student Tutors', 'Volunteer Student Tutors'),
@@ -49,6 +50,32 @@ class RegisterVoluteerForm(forms.Form):
     )
     def __init__(self, *args, **kwargs):
         super(RegisterVoluteerForm, self).__init__(*args, **kwargs)  
+
+PROJECTS = [
+    ('AI College Admission', 'AI College Admission'),
+    ('Tutademy', 'Tutademy'),
+    ('Rock Paper Scissors', 'Rock Paper Scissors'),
+]
+
+class RegisterProjectForm(forms.Form):
+    full_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    phone_number = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    school_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    grade = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    first_choice = forms.CharField(
+        max_length=200,
+        widget=forms.Select(choices=PROJECTS, attrs={'class': 'form-control'}),
+    )
+
+    second_choice = forms.CharField(
+        max_length=200,
+        widget=forms.Select(choices=PROJECTS, attrs={'class': 'form-control'}),
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(RegisterProjectForm, self).__init__(*args, **kwargs)  
 
 
 class SubscribeForm(forms.ModelForm):

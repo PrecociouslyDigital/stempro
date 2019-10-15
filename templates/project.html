@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Project{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" style="margin-top:30px">
+      <h4 style="color:blue">Signup Projects</h4>
+      <p style="font-size:16px; text-align: justify;">Welcome to StemPro Academy Intern and Leader Program. In the next six months, you will guided by a group of experienced professionals to learn state-of-art technologies, gain real industrial experience and engineering leadership skills.</p>
+      <h6>Tentative Class Times</h6>
+        <ul>
+        <li>AI College Admission: Sunday 10 to 12PM</li>
+        <li>Tutademy: Sunday 2 to 4PM</li>
+        <li>Rock Paper Scissors: Saturday 6 to 8PM</li>
+        </ul>      
+        <p style="font-size:16px; text-align: justify;">* Please note that StemPro Academy may open multiple teams for a same project.</p>
+        <ul>
+        <li>AI College Admission: Sunday 10 to 12PM</li>
+        <li>Tutademy: Sunday 2 to 4PM</li>
+        <li>Rock Paper Scissors: Saturday 6 to 8PM</li>
+        </ul>  
+
+      <h6>Payment options:</h6>
+        <ul>
+        <li>$240 Monthly</li>
+        <li>$680 per 3 months</li>
+        <li>$1280 one time payment</li>
+        </ul>
+        <span>Scholarship available for student TA etc.</span><br />
+        <span>Cheque:  StemPro Academy</span><br />
+        <span>PayPal: stemproaca@gmail.com</span><br />
+        <p>* Fees are considered as donations. Receipts will be mailed to you at the beginning of 2020.</p>
+        <p style="font-size:16px; text-align: justify;">The first class for all three  Microsoft Advanta C, 3003 160th Ave SE, Bellevue, WA 98008. Students please bring your laptop.</p>
+        <p>Looking forward to seeing you on Sunday!</p>
+    </div>
+    <div class="col-md-1"></div> 
+    <div class="col-md-5" style="margin-top:30px">
+
+      <form method="POST">
+        <h4>Thank You!</h4>
+        <span>Please complete the following form by Thursday, Oct. 17th.</span>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="row">
+          <div class='col-sm-4 myspace'>{{ field.label_tag }}</div>
+          <div class="col-sm-6 myspace">{{ field }}</div>
+          <div class="col-sm-2 myspace"></div>
+        </div>
+        <span class="text-danger small">{{ field.errors }}</span>
+        {% endfor %}
+
+        <div class="text-center", style="padding-top: 10px;">
+           <input type = "submit" class="btn btn-info" value="Signup Now" />
+        </div>
+      </form>
+      
+    </div>    
+  </div>
+</div>
+{% endblock %}
+
