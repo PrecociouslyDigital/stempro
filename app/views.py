@@ -364,7 +364,7 @@ class ProjectView(CreateView):
                 second_choice=project_info['second_choice'])
             project.save()
 
-            return HttpResponseRedirect('/users/project')
+            return HttpResponseRedirect('/users/subscribe_result')
         return render(request, self.template_name, {'form': form})
 
 ##########################################################
