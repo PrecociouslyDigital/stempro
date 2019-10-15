@@ -35,8 +35,8 @@ class SignupProject(models.Model):
     phone_number = models.CharField(max_length=50, null=True)
     school_name = models.CharField(max_length=200)
     grade = models.IntegerField(default=1)
-    first_choice = models.CharField(unique=True, max_length=200)
-    second_choice = models.CharField(unique=True, max_length=200)
+    first_choice = models.CharField(max_length=200)
+    second_choice = models.CharField(max_length=200)
 
     def __str__(self):
         return self.email
